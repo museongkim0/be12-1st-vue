@@ -1,30 +1,26 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+// 컴포넌트 import
+import AppPreloader from "/src/pages/common/AppPreloader.vue";
+import PageWrapper from "/src/pages/common/PageWrapper.vue";
+import Sidebar from "./pages/common/Sidebar.vue";
+import Header from "./pages/common/Header.vue";
+import MobileSearchBar from "./pages/common/MobileSearchBar.vue";
+import InstDash from "./pages/instructor/InstDash.vue";
+import Login from "./pages/user/login.vue";
+
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <!-- App preloader-->
+  <div
+    class="app-preloader fixed z-50 grid h-full w-full place-content-center bg-slate-50 dark:bg-navy-900"
+  >
+    <div class="app-preloader-inner relative inline-block size-48"></div>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <div id="root" class="min-h-100vh flex grow bg-slate-50 dark:bg-navy-900">
+    <router-view></router-view>
+  </div>
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
 </style>
